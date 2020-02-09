@@ -4,6 +4,16 @@ import ReactDOM from 'react-dom';
 import App from './App';
 
 import GithubState from './context/github/GithubState'; 
+import AlertState from './context/alert/AlertState'; 
 
-ReactDOM.render(<GithubState><Router><App /></Router></GithubState>, document.getElementById('root'));
+ReactDOM.render(
+	<GithubState>
+		<AlertState>
+			<Router>
+				<App />
+			</Router>
+		</AlertState>
+	</GithubState>,
+	document.getElementById("root")
+);
 
